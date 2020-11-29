@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    </head>
+    <body>
+        <h2>BMI 계산기</h2>
+        <script>
+            var input1 = prompt("type your body weight(kg)");
+            var weight = Number(input1);
+            console.log("Body weight :" + weight);
+            var input2 = prompt("type your height(m)");
+            var height = Number(input2);
+            console.log("Height:" + height);
+            
+            var bmi = weight / (height * height); 
+            console.log("Your BMI :" + bmi);
+        </script>
+    </body>
+</html>
