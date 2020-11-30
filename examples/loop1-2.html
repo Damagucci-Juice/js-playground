@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+    <h2>사용자가 입력한 수들의 갯수와 합을 구하세요.</h2>
+</body>
+<script>
+    var input_count = prompt("몇 개의 수를 입력하실 겁니까?");
+    var count = Number(input_count);
+    var sum = 0;
+
+    if (count !== 0) {
+        for (var i = 0; i < count; i++){
+            var input_num = prompt("숫자를 입력하세요.");
+            var num = Number(input_num);
+            if (num === 0) {
+                alert("프로그램을 종료합니다");
+                break;
+            }
+            sum += num;
+        }
+        document.write(count + " " +"개의 숫자를 모두 더한 값은"+ " " + sum + "입니다.");    
+    }
+    if (count === 0) {
+        alert("프로그램을 종료합니다.")
+    }
+</script>
+</html>
