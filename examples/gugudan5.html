@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Gugudan from 6 to 7 (ver.1)</h2>
+        <script>
+            var i = 6;
+            var n = 1;
+            while (n < 10){
+                var result = i * n;
+                document.write(i + " * " + n + " = " + result);
+                document.write("<br>");
+                n++;
+                if (n === 9){
+                    i++;
+                    n = 1;
+                    while (n < 10){
+                        var result = i * n;
+                        document.write(i + " * " + n + " = " + result);
+                        document.write("<br>");
+                        n++;
+                    }
+                }
+            }
+
+            // document.write("<br>");
+
+            // var i = 7;
+            // var n = 1;
+            // while (n < 10){
+            //     var result = i * n;
+            //     document.write(i + " * " + n + " = " + result);
+            //     document.write("<br>");
+            //     n++;
+            // }
+
+        </script>
+    </body>
+</html>
