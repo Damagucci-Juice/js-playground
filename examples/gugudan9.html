@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+    <h2>Gugudan 8-9 ver2</h2>
+    <script>
+        var strN = prompt("what number you wonder about gugudan?");
+        var n = Number(strN);
+        document.write("<h2>you pressed number " + n + "<br>So I'll show you " + n + " dan.</h2>");
+        if (n > 1 && n < 10){
+            for (var i = 1; i < 10; i++){
+                document.write(n + " * " + i + " = " + n * i, "<br>");
+            };
+        } else {
+            alert("Please enter 2~9 number.");
+        };
+    </script>
+</body>
+</html>
