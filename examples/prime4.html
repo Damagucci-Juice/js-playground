@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang=ko>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+    <h2>소수출력기</h2>
+    <div id = result></div>
+    <script>
+        numbers = {};
+        numbers.all = [];
+        numbers.primes =[];
+        numbers.addAll = function(max_num){
+            for (var i = 2; i <= max_num; i++){
+                this.all.push(i);
+            }
+        };
+        numbers.isPrime = function(number){
+            for (var i = 2; i < number; i++){
+                if(number % i === 0 ){
+                    return false;
+                }
+            }
+            return true;
+        };
+        numbers.calcPrimes = function(){
+            for (var i = 0; i < this.all.length; i++){
+                var n = this.all[i];
+                if(this.isPrime(n)){
+                    this.primes.push(n);       // error may occur here!
+                }
+            }
+        };
+        numbers.getAllPrimes = function(){
+            var ret = "" 
+            ret += "<h2>소수의 총 개수 " + this.primes.length + "</h2><br>\n";
+            for (var i = 0; i < this.primes.length; i++){
+                ret += (i+1) + " 번 째 소수" + " = " + this.primes[i] + "<br>\n";
+            }
+            return ret;
+        };
+
+        numbers.addAll(1000000);
+        numbers.calcPrimes();
+        document.getElementById('result').innerHTML = numbers.getAllPrimes();
+    </script>
+</body>
+</html>
