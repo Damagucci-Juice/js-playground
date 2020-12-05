@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"></head>
+</head>
+<body>
+    <h2>Improved gugudan with function</h2>
+    <script>
+        var result = [];
+        for (var n = 2; n <=9; n++) {
+            //calculate
+            for(var i = 1; i <=9; i++) {
+                result[i] = n * i;
+            }
+            //print
+            document.write("<h2>" + n + "단</h2>");
+            for (var i = 1; i <= 9; i++) {
+                var str = "";
+                //str = str + n;
+                str += n;
+                str += " X ";
+                str += i;
+                str += " = "
+                str += result[i];
+                str += " <br>";
+                document.write(str);
+            }
+        }
+    </script>
+</body>
+</html>
