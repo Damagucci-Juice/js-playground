@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object and Prototype</title>
+</head>
+<body>
+    <h2>객체와 프로토타입(prototype)</h2>
+    <script>
+        function Human(name, hp, mp, power) {
+            this.name = name;
+            this.hp = hp;
+            this.mp = mp;
+            this.power = power;
+        }
+        
+        Human.prototype.attack = function(target) {
+            target.hp -= this.power;
+        };
+    </script> 
+</body>
+</html>
