@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function gugudan</title>
+</head>
+<body>
+    <h2>함수를 이용한 구구단</h2>
+    <script>
+        let gugudan = {};
+        gugudan.calculate = function (num) {
+            let results = [];
+            for (let i = 0; i < 9; i++) {
+                results[i] = num * (i+1);
+            }
+            return results;
+        }
+        gugudan.print = function (num, results) {
+            document.write("<h2>" + num + "단</h2>");
+            let str = "";
+            for (let i = 0; i < 9; i++) {
+                str += num;
+                str += " X ";
+                str += (i+1);
+                str += " = ";
+                str += results[i];
+                str += "<br>";
+            }
+            document.write(str);
+        }   
+        function main() {
+            for (let num = 2; num <= 9; num++) {
+                let results = gugudan.calculate(num);
+                gugudan.print(num, results);
+            }
+        };
+
+        main();
+
+
+        
+    </script>
+</body>
+</html>
