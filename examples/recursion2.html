@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>factorial</title>
+</head>
+<body>
+    <script>
+ 
+        var fact = function(n) {
+            if (n === 0) {
+                return 1;
+            }
+
+            return n * fact(n-1);
+        };
+        // 재귀함수 호출을 이용한 방법 : 매개변수의 값이 커질 수록 함수의 실행 시간이 길어진다
+        function fibo(n) {
+            if (n <= 0) {
+                return 0;
+            }
+            if (n == 1) {
+                return 1;
+            }
+            return fibo(n - 1) + fibo(n - 2);
+        }
+
+        // 다이나믹 프로그래밍(memoization) 기법
+        var arr = [0,1];
+        
+         function fibo_d(n) {
+             if(arr[n] == undefined) {
+                 arr[n] = fibo_d(n - 1) + fibo_d(n - 2);
+             }
+             return arr[n];
+         }
+
+        console.log(fact(3) === 6);
+        console.log(fact(2) === 2);
+        console.log(fact(1) === 1);
+
+    </script>
+</body>
+</html>
