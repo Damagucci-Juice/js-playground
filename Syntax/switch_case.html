@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch and case</title>
+</head>
+<body>
+    <script>
+
+        function runIf() {
+            var score = prompt('점수를 입력하세요');
+            if (score === 10) {
+                console.log('A');
+            } else if (score == 9) {
+                console.log('B');
+            } else {
+                console.log('C');
+            }
+        }
+
+        function runSwitchCase() {
+            const score = prompt("점수를 입력하세요");
+            switch (score) {
+                case 10:
+                console.log('A');
+                break;
+                case 9:
+                console.log('B');
+                break;
+                default:
+                console.log('C');
+            }
+        }
+
+        runIf();
+        runSwitchCase();
+    </script>
+</body>
+</html>
