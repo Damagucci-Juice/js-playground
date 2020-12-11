@@ -8,23 +8,39 @@
 <body>
     <h2>객체와 생성자 연습장</h2>
     <script>
-        var Human = function (name, hp, power) {
+        const Human = function (name, hp, power) {
             this.name = name;
             this.hp = hp;
             this.power = power;
             this.attack = function (target) {
                 target.hp -= this.power;
             };
+            this.eat = function (food) {
+                this.hp += food.energy;
+            }
             this.show = function() {
                 console.log("%s %d %d",
                 this.name, this.hp, this.power);
             };
         };
 
-        p1 = new Human("juice", 100, 50);
-        p2 = new Human("damagucci", 200, 10);
+        const Food = function (name, energy) {
+            this.name = name;
+            this.energy = energy;
+            this.show = function() {
+                console.log("%s %d",
+                this.name, this.energy);
+            };
+        };
 
-        p1.attack(p2);      
+        let p1 = new Human("juice", 100, 50);
+        let p2 = new Human("damagucci", 200, 10);
+        let f1 = new Food("donut", 10);
+
+        p2.show();          // damagucci 150 10
+        p1.attack(p2);
+        p2.show();          // damagucci 150 10
+        p2.eat(f1);      
         p2.show();          // damagucci 150 10
 
     </script>
