@@ -1,15 +1,14 @@
-input = {};
-input.num1 = function(){
-    let num1 = Number(prompt("처음 숫자를 입력하세요."));
-    return num1;
+function input() {
+    const eqation = document.getElementById('eqation');
+    const str = eqation.value;
+    const arr = str.split(" ");
+    return arr;
 };
-input.op = function(){
-    let op = prompt("연산자를 입력하세요.")
-    return op;
-};
-input.num2 = function(){
-    let num2 = Number(prompt("두번째 숫자를 입력하세요."));
-    return num2;
+function isNumber(input) {
+    const num1 = Number(input[0]); 
+    const op = input[1]; 
+    const num2 = Number(input[2]);
+    return [num1, op, num2];
 };
 function calculate(num1, op, num2) {
     let results = num1;
@@ -46,13 +45,12 @@ function print(num1, op, num2, results) {
     out.innerHTML = str;
 };
 function main() {
-    const num1 = input.num1();
-    const op = input.op();
-    const num2 = input.num2();
+    const eqation = input();
+    const [num1, op, num2] = isNumber(eqation);
+    console.log(num1, op, num2);
     const results = calculate(num1, op, num2);
     print(num1, op, num2, results);
 };
 
-main();
 
 
