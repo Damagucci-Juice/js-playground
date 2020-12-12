@@ -1,17 +1,27 @@
-input = {};
-input.num1 = function(){
-    let num1 = Number(prompt("처음 숫자를 입력하세요."));
-    return num1;
+input = {count:2};
+input.getFirstValue = function() {
+    let firstValue = Number(prompt("input first number"));
+    return firstValue;
 };
-input.op = function(){
-    let op = prompt("연산자를 입력하세요.")
+input.getSecondValue = function() {
+    let secondValue = Number(prompt("input " + this.count + " number"));
+    this.count++;
+    return secondValue;
+};
+input.getOperation = function() {
+    while(true) {
+        var op = prompt("input operation");
+        if (op === "+" || op === "-" || op === "*" || op === "/" 
+            || op === 'q') {
+            break;
+        } else {
+            alert("input right operation.");
+        }
+    }
     return op;
 };
-input.num2 = function(){
-    let num2 = Number(prompt("두번째 숫자를 입력하세요."));
-    return num2;
-};
-function calculate(num1, op, num2) {
+calculator = {};
+calculator.calculate = function(num1, op, num2) {
     let results = num1;
     switch (op) {
         case "+":
@@ -27,30 +37,26 @@ function calculate(num1, op, num2) {
         results /= num2;
         break;
         default:
-        alert("올바른 연산자를 입력하세요.");
     }
     return results;
 };
-function print(num1, op, num2, results) {
-    let str = "";
-    str += num1;
-    str += " ";
-    str += op;
-    str += " ";
-    str += num2;
-    str += " = ";
-    str += results;
-    str += "<br>";
-
-    const out = document.getElementById('output');
-    out.innerHTML = str;
+output = {};
+output.out = document.getElementById('output'); 
+output.print = function(value) {
+    this.out.innerHTML = "Anwser is " + value + ".";
 };
 function main() {
-    const num1 = input.num1();
-    const op = input.op();
-    const num2 = input.num2();
-    const results = calculate(num1, op, num2);
-    print(num1, op, num2, results);
+    let result = input.getFirstValue();
+    while(true) {
+        let op = input.getOperation();
+        if (op === 'q') {
+            alert("Exit program.");
+            break;
+        }
+        let num = input.getSecondValue();
+        result = calculator.calculate(result, op, num);
+    }
+    output.print(result);
 };
 
 main();
