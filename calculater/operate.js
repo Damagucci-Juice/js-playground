@@ -1,4 +1,4 @@
-input = {count:2};
+var input = {count:2};
 input.getFirstValue = function() {
     let firstValue = Number(prompt("input first number"));
     return firstValue;
@@ -20,7 +20,7 @@ input.getOperation = function() {
     }
     return op;
 };
-calculator = {};
+var calculator = {};
 calculator.calculate = function(num1, op, num2) {
     let results = num1;
     switch (op) {
@@ -40,7 +40,7 @@ calculator.calculate = function(num1, op, num2) {
     }
     return results;
 };
-output = {};
+var output = {};
 output.out = document.getElementById('output'); 
 output.print = function(value) {
     this.out.innerHTML = "Anwser is " + value + ".";
