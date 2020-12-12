@@ -20,7 +20,7 @@
     <h1>단어 움직이기 퍼즐</h1>
     <div>
         <p id='progress'></p>
-        <p id='word1'>HELLO</p>
+        <p id='word1'>APPLE</p>
         <div id='word2'></div>
         <div id='btns'>
             <button onclick='swap()'>뒤집기</button>
@@ -29,26 +29,7 @@
         </div>
         <p id='check'>일치합니다.</p>
     </div>
-    <script>
-        var word1 = document.getElementById('word1').innerHTML;
-        var word2 = document.getElementById('word2');
-
-        for (var i = 0; i < word1.length; i++) {
-            var btn = document.createElement('button');
-            btn.innerHTML = word1[i];
-            word2.appendChild(btn);
-        }
-
-        var swap = function () {
-            console.log('swap');
-        };
-        var rshift = function () {
-            console.log('rshift');
-        };
-        var lshift = function () {
-            console.log('lshift')
-        };
-    </script>
+    <script src='word.js'></script>
 </body>
 
 </html>
